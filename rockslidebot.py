@@ -5,7 +5,7 @@ import discord
 
 token = os.getenv('DISCORD_TOKEN')
 
-class CustomClient(discord.Client):
+class RockSlideClient(discord.Client):
   async def on_message(self, message):
       if self.user.id == message.author.id:
           return
@@ -19,6 +19,7 @@ class CustomClient(discord.Client):
       await message.delete()
       await message.channel.send(message.author.mention + ' flinched and couldn\'t post!')
 
-client = CustomClient()
-client.run(token)
+if __name__ == '__main__':
+    client = RockSlideClient()
+    client.run(token)
 
