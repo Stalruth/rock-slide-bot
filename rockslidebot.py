@@ -13,9 +13,7 @@ class RockSlideClient(discord.Client):
           print('The flinch was blocked by the power of Dynamax!')
           return
       if random.randrange(10) >= 3:
-          print('> tfw you dont get the hax')
           return
-      print('FLINCH!')
       await message.delete()
       await message.channel.send(message.author.mention + ' flinched and couldn\'t post!')
 
